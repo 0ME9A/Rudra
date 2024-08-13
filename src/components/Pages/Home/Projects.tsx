@@ -1,9 +1,11 @@
-import ProjectCard, { ProjectCardProps } from "../../Card/ProjectCard";
+import { ProjectCardProps } from "@/ts/interfaces";
+import ProjectCard from "../../Card/ProjectCard";
 import Header from "../../Projects/Header";
 import Footer from "../../Projects/Footer";
 
 const projectData: ProjectCardProps[] = [
   {
+    id: "01",
     title: "Skyline Atrium",
     desc: "Miami, Florida",
     date: "Year 2024",
@@ -14,6 +16,7 @@ const projectData: ProjectCardProps[] = [
     },
   },
   {
+    id: "02",
     title: "Modern Loft",
     desc: "New York, New York",
     date: "Year 2022",
@@ -24,6 +27,7 @@ const projectData: ProjectCardProps[] = [
     },
   },
   {
+    id: "03",
     title: "Glass House",
     desc: "Aspen, Colorado",
     date: "Year 2021",
@@ -34,6 +38,7 @@ const projectData: ProjectCardProps[] = [
     },
   },
   {
+    id: "04",
     title: "Urban Villa",
     desc: "London, United Kingdom",
     date: "Year 2019",
@@ -47,7 +52,7 @@ const projectData: ProjectCardProps[] = [
 
 function Projects() {
   return (
-    <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl w-full mx-auto p-4">
+    <section className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
       <Header />
       {projectData.map((item) => (
         <ProjectCard

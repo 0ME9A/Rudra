@@ -31,7 +31,6 @@ body {
 }
 
 .css-sc-parent:hover .css-sc-child {
-  clip-path: polygon(100% 0, 100% 75%, 42.5% 75%, 40% 100%, 0 100%, 0 0);
   transition: 0.3s;
   border-color: transparent;
 }

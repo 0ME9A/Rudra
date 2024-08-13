@@ -16,7 +16,7 @@ function ServiceCard({
 }: ServiceDataProps) {
   return (
     <div className="css-sc-parent group border-b-2 hover:border-b-transparent relative">
-      <div className="css-sc-child p-4 flex items-center group-hover:items-start justify-between group-hover:bg-accent-500 duration-300">
+      <div className="css-sc-child p-4 flex items-center group-hover:items-start justify-between group-hover:bg-accent-500 duration-300 group-hover:clip-path-testimonial-sm md:group-hover:clip-path-testimonial-md">
         <div className="flex items-start gap-4 md:gap-6">
           <span className="text-sm md:text-2xl h-[2.5rem] md:h-[5rem] flex items-center">
             {id}
@@ -41,12 +41,7 @@ function ServiceCard({
           <GoArrowRight />
         </Link>
       </div>
-      <div
-        className="hidden md:block w-80 bg-white absolute -top-1/2 right-1/4 scale-0 group-hover:scale-100 rotate-0 group-hover:-rotate-12 opacity-0 group-hover:opacity-100 duration-300"
-        style={{
-          clipPath: "polygon(10% 0%, 100% 0, 100% 100%, 0 100%, 0% 10%)",
-        }}
-      >
+      <div className="hidden md:block w-80 bg-white absolute -top-1/2 right-1/4 scale-0 group-hover:scale-100 rotate-0 group-hover:-rotate-6 opacity-0 group-hover:opacity-100 duration-300 clip-path-penta-tl-sm">
         <Image
           src={src}
           alt={alt}

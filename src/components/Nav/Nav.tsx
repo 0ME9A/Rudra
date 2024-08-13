@@ -20,8 +20,8 @@ function Nav() {
 
   return (
     <>
-      <div className="w-full top-0 z-50 absolute">
-        <nav className="max-w-screen-2xl flex justify-between items-center mx-auto p-2 py-4 md:p-4 lg:py-6">
+      <div className="w-full top-0 z-50 bg-navy-900">
+        <nav className="container flex justify-between items-center mx-auto p-2 py-4 md:p-4 lg:py-6">
           <h1 className="text-xl md:text-2xl font-bold">
             <Link href="/" className="text-accent-500">
               RD

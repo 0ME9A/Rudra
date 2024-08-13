@@ -1,6 +1,5 @@
 import { ServiceDataProps } from "@/ts/interfaces";
 import ServiceCard from "@/components/Card/ServiceCard";
-import React from "react";
 
 const serviceData: ServiceDataProps[] = [
   {
@@ -51,7 +50,7 @@ const serviceData: ServiceDataProps[] = [
 
 function Services() {
   return (
-    <div className="max-w-screen-2xl w-full mx-auto p-4">
+    <div className="container mx-auto p-4">
       {serviceData.map((item) => (
         <ServiceCard
           key={item.id}
