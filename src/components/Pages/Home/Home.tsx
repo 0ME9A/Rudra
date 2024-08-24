@@ -5,7 +5,7 @@ import WhoWeAre from "./WhoWeAre";
 import Services from "./Services";
 import Hero from "./Hero";
 import Contact from "./Contact";
-import ContactII from "./ContactII";
+import Footer from "@/components/Footer/Footer";
 
 function Home() {
   return (
@@ -15,8 +15,8 @@ function Home() {
       <Projects />
       <Services />
       <Testimonials />
-      <Contact/>
-      <div className="h-screen"></div>
+      <Contact />
+      <Footer />
     </>
   );
 }
