@@ -33,3 +33,9 @@ export interface TestimonialCardProps {
   className?: string;
   src: string;
 }
+
+export interface CountryPhoneCode {
+  name: string;
+  dial_code: string;
+  code: string;
+}

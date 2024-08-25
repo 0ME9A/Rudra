@@ -6,14 +6,15 @@ const siteMap = [
   { id: "1", name: "service", link: "/service" },
   { id: "2", name: "projects", link: "/projects" },
   { id: "3", name: "testimonial", link: "/testimonial" },
+  { id: "4", name: "contact", link: "/contact" },
 ];
 const company = [
   { id: "0", name: "about us", link: "/about" },
   { id: "1", name: "our teams", link: "/teams" },
   { id: "2", name: "careers", link: "/careers" },
   { id: "3", name: "certificates", link: "/certificates" },
-  { id: "4", name: "privacy & policy", link: "/privacy&policy" },
-  { id: "5", name: "terms of service", link: "/terms" },
+  { id: "4", name: "privacy & policy", link: "/privacy_policy" },
+  { id: "5", name: "terms of service", link: "/terms_of_service" },
 ];
 
 function Footer() {
@@ -37,7 +38,7 @@ function Footer() {
                 key={item.id}
                 className="w-full hover:clip-path-penta-tr-xs duration-300 hover:bg-white hover:text-accent-500"
               >
-                <Link href={`/${item.link}`} className="w-full block p-2">
+                <Link href={`${item.link}`} className="w-full block p-2">
                   {item.name}
                 </Link>
               </li>
@@ -49,7 +50,7 @@ function Footer() {
                 key={item.id}
                 className="w-full hover:clip-path-penta-tr-xs duration-300 hover:bg-white hover:text-accent-500"
               >
-                <Link href={`/${item.link}`} className="w-full block p-2">
+                <Link href={`${item.link}`} className="w-full block p-2">
                   {item.name}
                 </Link>
               </li>

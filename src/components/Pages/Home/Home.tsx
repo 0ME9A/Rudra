@@ -1,11 +1,9 @@
-import PrimaryLink from "@/components/Links/PrimaryLink";
 import Testimonials from "./Testimonials";
 import Projects from "./Projects";
 import WhoWeAre from "./WhoWeAre";
 import Services from "./Services";
-import Hero from "./Hero";
 import Contact from "./Contact";
-import Footer from "@/components/Footer/Footer";
+import Hero from "./Hero";
 
 function Home() {
   return (
@@ -16,7 +14,7 @@ function Home() {
       <Services />
       <Testimonials />
       <Contact />
-      <Footer />
+      <div />
     </>
   );
 }

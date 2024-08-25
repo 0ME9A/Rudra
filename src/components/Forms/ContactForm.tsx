@@ -1,16 +1,11 @@
 "use client";
+import { CountryPhoneCode } from "@/ts/interfaces";
 import { MdDateRange } from "react-icons/md";
 import { useState } from "react";
 import countryCodes from "../../data/countryCodes.json";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import Link from "next/link";
 
-// Define the type for country phone codes
-interface CountryPhoneCode {
-  name: string;
-  dial_code: string;
-  code: string;
-}
 
 // Cast the imported JSON data to the correct type
 const countryPhoneCodes: CountryPhoneCode[] =
@@ -132,12 +127,17 @@ function ContactForm() {
         type="submit"
         className="w-full bg-navy-900 hover:bg-navy-800 border-navy-800 focus:ring-navy-300"
       >
-        Book a Call
+        Send
       </PrimaryBtn>
       <p className="text-center max-w-sm mx-auto text-gray-300 text-sm p-2">
         By contacting us, you agree to our{" "}
-        <Link href="/#">Terms of service</Link> and{" "}
-        <Link href={"/#"}>Privacy Policy</Link>
+        <Link href="/terms_of_service" className="underline hover:text-black">
+          Terms of service
+        </Link>{" "}
+        and{" "}
+        <Link href={"/privacy_policy"} className="underline hover:text-black">
+          Privacy Policy
+        </Link>
       </p>
     </form>
   );
