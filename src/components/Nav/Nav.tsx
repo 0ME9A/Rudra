@@ -67,7 +67,7 @@ function Nav() {
         </nav>
       </div>
       <div
-        className={`max-w-sm w-full h-screen flex flex-col bg-navy-800 fixed z-40 top-0 pt-16 duration-300 md:hidden overflow-y-auto ${
+        className={`max-w-sm w-full h-dvh flex flex-col bg-navy-800 fixed z-40 top-0 pt-16 duration-300 md:hidden overflow-y-auto ${
           menuState ? "right-0" : "-right-full"
         }`}
       >
