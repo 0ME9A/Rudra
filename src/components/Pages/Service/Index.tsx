@@ -48,9 +48,9 @@ const serviceData: ServiceDataProps[] = [
   },
 ];
 
-function Services() {
+function Index() {
   return (
-    <div className="container mx-auto p-4">
+    <div>
       {serviceData.map((item) => (
         <ServiceCard
           key={item.id}
@@ -65,4 +65,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default Index;

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Footer from "@/components/Footer/Footer";
+import CallNow from "@/components/Fix/CallNow";
 import ClientLayout from "./clientLayout";
 import Nav from "@/components/Nav/Nav";
 import "./globals.css";
@@ -24,6 +26,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         <ClientLayout>{children}</ClientLayout>
+        <CallNow />
+        <Footer />
       </body>
     </html>
   );
