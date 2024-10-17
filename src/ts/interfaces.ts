@@ -23,6 +23,17 @@ export interface ProjectCardProps {
   };
 }
 
+export interface ProjectCardProps_v2 {
+  _id: string;
+  title: string;
+  address: string;
+  desc: string;
+  date: string;
+  projectType: string;
+  status: "completed" | "ongoing";
+  previewImages: string[];
+}
+
 export interface TestimonialCardProps {
   id?: string;
   name: string;
