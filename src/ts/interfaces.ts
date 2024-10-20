@@ -10,19 +10,6 @@ export interface ServiceDataProps {
   };
 }
 
-export interface ProjectCardProps {
-  id?: string;
-  title: string;
-  desc: string;
-  date?: string;
-  className?: string;
-  img: {
-    src: string;
-    alt: string;
-    size: { w: number; h: number };
-  };
-}
-
 export interface ProjectFace {
   _id: string;
   title: string;
@@ -32,17 +19,6 @@ export interface ProjectFace {
   projectType: string;
   status: "completed" | "ongoing";
   previewImages: string[];
-}
-
-export interface TestimonialCardProps {
-  id?: string;
-  name: string;
-  occupation?: string;
-  review: string;
-  date?: string;
-  rating: number;
-  className?: string;
-  src: string;
 }
 
 export interface TestimonialFace {
