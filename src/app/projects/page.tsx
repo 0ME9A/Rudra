@@ -1,17 +1,17 @@
-import { ProjectCardProps_v2 } from "@/ts/interfaces";
-import ProjectCard from "@/components/Card/ProjectCard";
+import { ProjectFace } from "@/ts/interfaces";
 import Header from "@/components/Pages/Projects/Header";
 import Error_v1 from "@/components/Error_v1";
 import Loading from "@/components/Loading";
 import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
 
-// Lazy load Index component
-const Index = dynamic(() => import("@/components/Pages/Projects/Index"), {
+// Lazy load projectCard component
+const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"), {
   suspense: true,
 });
 
 export default async function Page() {
-  let projects: ProjectCardProps_v2[] = [];
+  let projects: ProjectFace[] = [];
 
   try {
     const res = await fetch(
@@ -43,11 +43,11 @@ export default async function Page() {
     <div className="space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32">
       <section className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         <Header projects={projects.length} />
-        {projects.length === 0 ? (
-          <Loading />
-        ) : (
-          projects.map((item) => <ProjectCard key={item._id} data={item} />)
-        )}
+        <Suspense fallback={<Loading />}>
+          {projects.map((item) => (
+            <ProjectCard key={item._id} data={item} />
+          ))}
+        </Suspense>
       </section>
       <div />
     </div>

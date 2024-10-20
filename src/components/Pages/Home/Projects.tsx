@@ -1,5 +1,5 @@
 "use client";
-import { ProjectCardProps_v2 } from "@/ts/interfaces";
+import { ProjectFace } from "@/ts/interfaces";
 import { useState, useEffect } from "react";
 import ProjectCard from "@/components/Card/ProjectCard";
 import Footer from "../../Projects/Footer";
@@ -7,7 +7,7 @@ import Loading from "@/components/Loading";
 import Header from "../Projects/Header";
 
 function Projects() {
-  const [projectData, setProjectData] = useState<ProjectCardProps_v2[]>([]);
+  const [projectData, setProjectData] = useState<ProjectFace[]>([]);
   const [totalProjects, setTotalProjects] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);

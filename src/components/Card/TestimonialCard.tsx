@@ -1,16 +1,17 @@
-import { TestimonialCardProps } from "@/ts/interfaces";
+import { TestimonialCardFace } from "@/ts/interfaces";
+import { getDateMonthYear } from "@/utils/local";
 import StarRating from "../Rating/StarRating";
 import Image from "next/image";
 
-function TestimonialCard({
-  name,
-  occupation,
-  review,
-  rating,
-  date,
-  src,
-  className,
-}: TestimonialCardProps) {
+interface TestimonialCardProps {
+  data: TestimonialCardFace;
+  className?: string;
+}
+
+function TestimonialCard({ data, className }: TestimonialCardProps) {
+  const { name, profession, message, rate, date, profile } = data;
+  const dateTime = new Date(date);
+
   return (
     <div className={`relative group ${className}`}>
       <div className="p-10 w-full h-full bg-white absolute top-0 left-0 clip-path-testimonial-sm md:clip-path-testimonial-md group-hover:bg-accent-500" />
@@ -22,8 +23,8 @@ function TestimonialCard({
         }}
       >
         <Image
-          src={src}
-          alt={name}
+          src={profile}
+          alt={name + "avatar"}
           width={300}
           height={300}
           quality={100}
@@ -35,11 +36,11 @@ function TestimonialCard({
           <h3 className="text-xl md:text-2xl uppercase font-[500] py-1">
             {name}
           </h3>
-          {occupation && <p className="text-gray-200">{occupation}</p>}
-          {review && <p className="py-4">{review}</p>}
+          {profession && <p className="text-gray-200">{profession}</p>}
+          {message && <p className="py-4">{message}</p>}
           <div className="flex justify-between items-center py-3 sm:pb-10">
-            <div className="flex text-xl">{<StarRating rating={rating} />}</div>
-            <p className="text-gray-200">{date}</p>
+            <div className="flex text-xl">{<StarRating rating={rate} />}</div>
+            <p className="text-gray-200">{getDateMonthYear(dateTime)}</p>
           </div>
         </div>
       </div>

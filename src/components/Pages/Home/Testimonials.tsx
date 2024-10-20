@@ -1,62 +1,45 @@
-import { TestimonialCardProps } from "@/ts/interfaces";
+"use client";
+import { TestimonialFace } from "@/ts/interfaces";
+import { getDateMonthYear } from "@/utils/local";
+import { useState, useEffect } from "react";
 import TestimonialCard from "@/components/Card/TestimonialCard";
 import StarRating from "@/components/Rating/StarRating";
+import Loading from "@/components/Loading";
 import Link from "next/link";
 
-export const testimonialsData: TestimonialCardProps[] = [
-  {
-    id: "1",
-    name: "Emily Robertson",
-    occupation: "Homeowner",
-    review: "",
-    date: "March, 2024",
-    rating: 2.9,
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFjZXxlbnwwfHwwfHx8MA%3D%3D",
-  },
-  {
-    id: "2",
-    name: "James Thornton",
-    occupation: "CEO, Thornton Construction",
-    review:
-      "Working with this team on our commercial building was a fantastic experience. Their architectural design brought a modern, sleek look to our workspace.",
-    date: "April, 2024",
-    rating: 5.0,
-    src: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZhY2V8ZW58MHx8MHx8fDA%3D",
-  },
-  {
-    id: "3",
-    name: "Sophia Martinez",
-    occupation: "Interior Designer",
-    review:
-      "Their architectural insights were invaluable to our project. The final result is a perfect blend of functionality and aesthetic appeal.",
-    date: "January, 2024",
-    rating: 4.7,
-    src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: "4",
-    name: "Michael Lee",
-    occupation: "Real Estate Developer",
-    review:
-      "Their innovative approach to interior design transformed our properties, making them more appealing to high-end buyers.",
-    date: "February, 2024",
-    rating: 4.9,
-    src: "https://images.unsplash.com/photo-1484611941511-3628849e90f7?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: "5",
-    name: "Olivia Parker",
-    occupation: "Retail Store Owner",
-    review:
-      "The architectural redesign of our store has significantly improved customer flow and enhanced the overall shopping experience.",
-    date: "May, 2024",
-    rating: 4.6,
-    src: "https://images.unsplash.com/photo-1512288094938-363287817259?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-];
-
 function Testimonials() {
-  const lt = testimonialsData.at(-1);
+  const [testimonialsData, setTestimonialsData] = useState<TestimonialFace[]>(
+    []
+  );
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial?limit=4`
+        );
+        if (!res.ok) throw new Error("Failed to fetch testimonials.");
+
+        const data = await res.json();
+        setTestimonialsData(data.data); // Assuming `data.data` contains the array of testimonials
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+        setError(true);
+        setLoading(false);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  if (loading) return <Loading />;
+  if (error) return <p>Failed to load testimonials.</p>;
+
+  const lt: TestimonialFace = testimonialsData[3];
+  const dateTime = new Date(lt?.date);
 
   return (
     <section className="container mx-auto p-4">
@@ -70,15 +53,7 @@ function Testimonials() {
       <div className="grid lg:grid-cols-2 gap-6 py-8 lg:py-16">
         <div className="space-y-6">
           {testimonialsData.slice(0, 3).map((item) => (
-            <TestimonialCard
-              key={item.id}
-              name={item.name}
-              occupation={item.occupation}
-              review={item.review}
-              rating={item.rating}
-              date={item.date}
-              src={item.src}
-            />
+            <TestimonialCard key={item._id} data={item} />
           ))}
 
           <Link
@@ -93,20 +68,20 @@ function Testimonials() {
             <h3 className="text-xl md:text-2xl uppercase font-[500]">
               {lt?.name}
             </h3>
-            <p className="text-gray-200">{lt?.occupation}</p>
+            <p className="text-gray-200">{lt?.profession}</p>
           </div>
           <blockquote
             cite=""
             className="text-2xl md:text-3xl lg:text-5xl py-32"
           >
             {`"`}
-            {lt?.review}
+            {lt?.message}
             {`"`}
           </blockquote>
           <span className="h-[10%]" />
           <div className="flex items-center justify-between">
-            <StarRating rating={lt?.rating || 5} />
-            <p>{lt?.date}</p>
+            <StarRating rating={lt?.rate || 5} />
+            <p>{getDateMonthYear(dateTime)}</p>
             <p className="font-[600]">RD</p>
           </div>
         </div>
