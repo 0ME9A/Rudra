@@ -1,24 +1,21 @@
-import { ProjectCardProps } from "@/ts/interfaces";
+import { ProjectCardProps_v2 } from "@/ts/interfaces";
 import Image from "next/image";
 
-function ProjectCard({
-  img: {
-    src,
-    alt,
-    size: { w, h },
-  },
-  title,
-  desc,
-  date,
-  className,
-}: ProjectCardProps) {
+interface cardFace {
+  data: ProjectCardProps_v2;
+  className?: string;
+}
+
+function ProjectCard({ data, className }: cardFace) {
+  const { title, previewImages, desc, date, address, status } = data;
+  const setDate = new Date(date);
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <Image
-        src={src}
-        alt={alt}
-        width={w}
-        height={h}
+        src={previewImages[0] || ""}
+        alt={title}
+        width={500}
+        height={500}
         quality={100}
         blurDataURL="data:..."
         placeholder="blur"
@@ -26,12 +23,18 @@ function ProjectCard({
       />
       <span className="w-full h-full absolute top-0 bg-gradient-to-t from-navy-900/80 to-transparent" />
       <div className="h-16"></div>
+      <div className="absolute top-2 right-2 p-2 py-1 bg-navy-900/20 flex justify-center items-center gap-2 text-xs rounded-full">
+        
+        <div className="size-2 bg-accent-500 rounded-full animate-pulse" />
+        <p>{status}</p>
+      </div>
       <div className="w-full absolute bottom-0 p-6">
         <h2 className="text-2xl uppercase font-[500]">{title}</h2>
-        <div className="flex justify-between text-md font-[200]">
-          <p>{desc}</p>
-          <span>{date}</span>
+        <div className="flex justify-between text-md font-[200] text-xs">
+          <span>{address}</span>
+          <span className="opacity-75">Year {setDate.getFullYear()}</span>
         </div>
+        <p className="pt-2">{desc}</p>
       </div>
     </div>
   );
