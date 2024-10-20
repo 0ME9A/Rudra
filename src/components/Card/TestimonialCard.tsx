@@ -1,10 +1,10 @@
-import { TestimonialCardFace } from "@/ts/interfaces";
+import { TestimonialFace } from "@/ts/interfaces";
 import { getDateMonthYear } from "@/utils/local";
 import StarRating from "../Rating/StarRating";
 import Image from "next/image";
 
 interface TestimonialCardProps {
-  data: TestimonialCardFace;
+  data: TestimonialFace;
   className?: string;
 }
 

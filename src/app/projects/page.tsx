@@ -42,7 +42,7 @@ export default async function Page() {
   return (
     <div className="space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32">
       <section className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-        <Header projects={projects.length} />
+        <Header projects={projects.length || 0} />
         <Suspense fallback={<Loading />}>
           {projects.map((item) => (
             <ProjectCard key={item._id} data={item} />

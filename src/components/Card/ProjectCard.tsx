@@ -1,8 +1,8 @@
-import { ProjectCardProps_v2 } from "@/ts/interfaces";
+import { ProjectFace } from "@/ts/interfaces";
 import Image from "next/image";
 
 interface cardFace {
-  data: ProjectCardProps_v2;
+  data: ProjectFace;
   className?: string;
 }
 
