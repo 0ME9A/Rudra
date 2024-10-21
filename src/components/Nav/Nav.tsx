@@ -22,11 +22,16 @@ function Nav() {
     <>
       <div className="w-full relative top-0 z-50 bg-navy-900">
         <nav className="container flex justify-between items-center mx-auto p-2 py-4 md:p-4 lg:py-6">
-          <h1 className="text-xl md:text-2xl font-bold">
-            <Link href="/" className="text-accent-500">
-              RD
-            </Link>
-          </h1>
+          <div>
+            <h1 className="text-xl md:text-2xl font-bold">
+              <Link href="/" className="text-accent-500">
+                24x7 RUDRA
+              </Link>
+            </h1>
+            <span className={"text-[.8rem]"}>
+              creative home decor & architects
+            </span>
+          </div>
           <ul className="hidden md:flex items-center md:w-1/2 lg:w-1/3 justify-between capitalize font-[300]">
             {navItems.map((item) => (
               <li key={item.id}>

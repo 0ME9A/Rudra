@@ -2,6 +2,7 @@ import { GoPlus } from "react-icons/go";
 import PrimaryLink from "@/components/Links/PrimaryLink";
 import Image from "next/image";
 import Link from "next/link";
+import Hero_04 from "./Hero_04";
 
 function Hero() {
   return (
@@ -20,7 +21,7 @@ function Hero() {
               Contact us
             </PrimaryLink>
             <PrimaryLink
-              href="tel:+919304982636"
+              href="tel:+917903021397"
               className="w-full sm:w-fit !normal-case"
               transparent={true}
             >
@@ -89,18 +90,16 @@ function Hero() {
         <div className="w-full text-black grid items-center justify-center pt-16">
           <div>
             <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[2.5rem] leading-none font-[600]">
-              1.5k<span className="text-accent-500">+</span>
+              100<span className="text-accent-500">+</span>
             </p>
-            <p className="text-sm leading-none font-[500] py-2">
-              Global Clients
-            </p>
+            <p className="text-sm leading-none font-[500] py-2">Clients</p>
           </div>
           <div className="pt-10 pb-6">
             <p className="uppercase font-[600] text-lg">
               Harmony <br />
               atrium
             </p>
-            <p className="text-sm py-2 font-[500]">Settle - Washington</p>
+            <p className="text-sm py-2 font-[500]">Settle - Patna</p>
           </div>
           <div className="p-1"></div>
         </div>
@@ -115,28 +114,7 @@ function Hero() {
           />
         </div>
       </div>
-      <div className="h-full flex flex-col">
-        <div className="grid lg:grid-cols-2 items-start h-fit *:p-10 *:md:p-16">
-          <div className="flex items-center gap-4">
-            <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[3rem] leading-none font-[600]">
-              4.5k<span className="text-accent-500">+</span>
-            </p>
-            <p className="text-gray-500 text-xl leading-none">
-              Successful <br /> project
-            </p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[3rem] leading-none font-[600]">
-              6<span className="text-accent-500">+</span>
-            </p>
-            <p className="text-gray-500 text-xl leading-none">
-              Years of <br /> Expertise
-            </p>
-          </div>
-        </div>
-        {/* <div className="h-full flex items-end justify-end clip-path-testimonial-xl bg-accent-500">
-        </div> */}
-      </div>
+      <Hero_04 />
     </section>
   );
 }
