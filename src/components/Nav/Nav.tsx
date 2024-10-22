@@ -29,7 +29,7 @@ function Nav() {
               </Link>
             </h1>
             <span className={"text-[.8rem]"}>
-              creative home decor & architects
+              Creative Home Decor & Architects
             </span>
           </div>
           <ul className="hidden md:flex items-center md:w-1/2 lg:w-1/3 justify-between capitalize font-[300]">
