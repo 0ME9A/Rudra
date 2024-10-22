@@ -6,6 +6,7 @@ import TestimonialCard from "@/components/Card/TestimonialCard";
 import StarRating from "@/components/Rating/StarRating";
 import Loading from "@/components/Loading";
 import Link from "next/link";
+import Error_v2 from "@/components/Error_v2";
 
 function Testimonials() {
   const [testimonialsData, setTestimonialsData] = useState<TestimonialFace[]>(
@@ -36,7 +37,13 @@ function Testimonials() {
   }, []);
 
   if (loading) return <Loading />;
-  if (error) return <p>Failed to load testimonials.</p>;
+  if (error)
+    return (
+      <Error_v2
+        className="text-center"
+        message="Failed to load testimonials. 😞"
+      />
+    );
 
   const lt: TestimonialFace = testimonialsData[3];
   const dateTime = new Date(lt?.date);
