@@ -1,0 +1,10 @@
+# Robots.txt for Rudra Creative Home Decor and Architects
+
+User-agent: *
+Disallow: /api/
+Disallow: /certificates/
+Disallow: /careers/
+
+Allow: /
+
+Sitemap: https://rudracreativehomedecor.in/sitemap.xml

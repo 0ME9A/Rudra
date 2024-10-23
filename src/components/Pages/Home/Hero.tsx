@@ -47,6 +47,7 @@ function Hero() {
               width={500}
               height={500}
               quality={100}
+              priority={false}
               className="h-full w-full"
             />
             <Image
@@ -55,6 +56,7 @@ function Hero() {
               width={500}
               height={500}
               quality={100}
+              priority={false}
               className="h-full w-full"
             />
             <Image
@@ -63,6 +65,7 @@ function Hero() {
               width={500}
               height={500}
               quality={100}
+              priority={false}
               className="h-full w-full"
             />
             <Link
@@ -83,6 +86,7 @@ function Hero() {
           width={500}
           height={500}
           quality={100}
+          priority={false}
           className="h-full w-fit absolute bottom-0 right-0"
         />
       </div>
@@ -110,6 +114,7 @@ function Hero() {
             width={500}
             height={500}
             quality={100}
+            priority={false}
             className="w-full h-full object-cover"
           />
         </div>

@@ -1,6 +1,23 @@
 import ContactForm from "@/components/Forms/ContactForm";
 import Image from "next/image";
+import { Metadata } from "next/types";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Contact Us - 24x7 Rudra Creative Home Decor & Architects",
+  description:
+    "Get in touch with 24x7 Rudra Creative Home Decor & Architects in the Patna region. Reach out for inquiries about our interior design and architecture services. Contact us today to start your home decor journey.",
+  keywords: [
+    "contact us",
+    "24x7 Rudra Creative Home Decor & Architects",
+    "interior design Patna",
+    "architecture services Patna",
+    "home decor Patna",
+    "Patna region decor services",
+    "get in touch Rudra Creative",
+    "contact details Rudra Creative",
+  ],
+};
 
 function contact() {
   return (

@@ -1,3 +1,21 @@
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - 24x7 Rudra Creative Home Decor & Architects",
+  description:
+    "Read the privacy policy of 24x7 Rudra Creative Home Decor & Architects. Learn about how we handle your personal information and ensure your privacy when using our services in the Patna region.",
+  keywords: [
+    "privacy policy",
+    "data protection",
+    "user privacy",
+    "personal information",
+    "24x7 Rudra Creative Home Decor & Architects",
+    "home decor services privacy",
+    "data security",
+    "Patna region privacy practices",
+  ],
+};
+
 function page() {
   return (
     <div className="container mx-auto p-4 space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32">

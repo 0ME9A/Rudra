@@ -1,4 +1,5 @@
 import { ProjectFace } from "@/ts/interfaces";
+import { Metadata } from "next/types";
 import Header from "@/components/Pages/Projects/Header";
 import Error_v1 from "@/components/Error_v1";
 import Loading from "@/components/Loading";
@@ -10,15 +11,31 @@ const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"), {
   suspense: true,
 });
 
+export const metadata: Metadata = {
+  title: "Our Projects - 24x7 Rudra Creative Home Decor & Architects",
+  description:
+    "Discover our portfolio of stunning projects at 24x7 Rudra Creative Home Decor & Architects. Explore our innovative designs and home decor solutions tailored to clients in the Patna region.",
+  keywords: [
+    "projects",
+    "portfolio",
+    "home decor projects",
+    "architectural designs",
+    "interior design projects",
+    "Patna projects",
+    "24x7 Rudra Creative Home Decor & Architects",
+    "renovation",
+    "design inspiration",
+  ],
+};
+
+
 export default async function Page() {
   let projects: ProjectFace[] = [];
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects`,
-      {
-        cache: "no-store",
-      }
+      `/api/projects`,
+      { cache: "no-store" }
     );
 
     if (!res.ok) throw new Error("Failed to fetch Projects.");

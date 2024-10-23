@@ -1,4 +1,22 @@
+import { Metadata } from "next/types";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions - 24x7 Rudra Creative Home Decor & Architects",
+  description:
+    "Review the terms and conditions for using services provided by 24x7 Rudra Creative Home Decor & Architects in the Patna region. Understand your rights and obligations when interacting with our services.",
+  keywords: [
+    "terms and conditions",
+    "service agreement",
+    "user obligations",
+    "24x7 Rudra Creative Home Decor & Architects",
+    "Patna terms and conditions",
+    "home decor services",
+    "architectural services agreement",
+    "service usage policies",
+    "Patna region legal policies",
+  ],
+};
 
 function page() {
   return (
