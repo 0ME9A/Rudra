@@ -7,6 +7,7 @@ import CallNow from "@/components/Fix/CallNow";
 import ClientLayout from "./clientLayout";
 import Nav from "@/components/Nav/Nav";
 import "./globals.css";
+import ChatNow from "@/components/Fix/ChatNow";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         <ClientLayout>{children}</ClientLayout>
+        <ChatNow />
         <CallNow />
         <Footer />
       </body>
