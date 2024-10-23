@@ -1,4 +1,5 @@
 "use client";
+import Error_v2 from "@/components/Error_v2";
 import React, { useEffect, useState } from "react";
 
 function Hero_04() {
@@ -51,7 +52,7 @@ function Hero_04() {
 
   if (error)
     return (
-      <p className={"text-gray-500 p-10 md:p-16"}>Failed to load resources.</p>
+      <Error_v2 className="md:p-10" message="Failed to load resources." />
     );
 
   return (

@@ -5,6 +5,7 @@ import ProjectCard from "@/components/Card/ProjectCard";
 import Footer from "../../Projects/Footer";
 import Loading from "@/components/Loading";
 import Header from "../Projects/Header";
+import Error_v2 from "@/components/Error_v2";
 
 function Projects() {
   const [projectData, setProjectData] = useState<ProjectFace[]>([]);
@@ -52,7 +53,10 @@ function Projects() {
   }, []);
 
   if (loading) return <Loading />;
-  if (error) return <p>Failed to load projects.</p>;
+  if (error)
+    return (
+      <Error_v2 className="text-center" message="Failed to load projects. 😞" />
+    );
 
   return (
     <section className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
