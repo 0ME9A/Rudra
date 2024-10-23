@@ -5,8 +5,8 @@
     "start_url": "https://rudracreativehomedecor.in",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#0F0F37",
-    "theme_color": "#FF5F06",
+    "background_color": "#ffff",
+    "theme_color": "#08081B",
     "description": "Transforming Spaces with Innovative Home Decor Solutions.",
     "icons": [
         {
