@@ -1,4 +1,5 @@
 import { TestimonialFace } from "@/ts/interfaces";
+import { Metadata } from "next/types";
 import Error_v1 from "@/components/Error_v1";
 import Loading from "@/components/Loading";
 import dynamic from "next/dynamic";
@@ -10,14 +11,28 @@ const TestimonialCard = dynamic(
   { suspense: true }
 );
 
+export const metadata: Metadata = {
+  title: "Testimonials - 24x7 Rudra Creative Home Decor & Architects",
+  description:
+    "Hear from satisfied clients of 24x7 Rudra Creative Home Decor & Architects in the Patna region. Read testimonials showcasing the quality of our home decor and architectural services.",
+  keywords: [
+    "testimonials",
+    "customer feedback",
+    "reviews",
+    "24x7 Rudra Creative Home Decor & Architects",
+    "Patna testimonials",
+    "happy clients",
+    "home decor reviews",
+    "architectural service feedback",
+    "Patna region",
+  ],
+};
+
 export default async function Page() {
   let testimonials: TestimonialFace[] = [];
 
   try {
-    const res = await fetch(
-      `/api/testimonial`,
-      { cache: "no-store" }
-    );
+    const res = await fetch(`/api/testimonial`, { cache: "no-store" });
 
     if (!res.ok) throw new Error("Failed to fetch testimonials.");
 
@@ -53,7 +68,7 @@ export default async function Page() {
           ))}
         </Suspense>
       </div>
-      <div/>
+      <div />
     </section>
   );
 }
