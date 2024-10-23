@@ -34,7 +34,7 @@ export default async function Page() {
 
   try {
     const res = await fetch(
-      `/api/projects`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects`,
       { cache: "no-store" }
     );
 
