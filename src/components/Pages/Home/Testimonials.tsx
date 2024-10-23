@@ -18,7 +18,7 @@ function Testimonials() {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const res = await fetch(`/api/testimonial?limit=4`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial?limit=4`);
         if (!res.ok) throw new Error("Failed to fetch testimonials.");
 
         const data = await res.json();
