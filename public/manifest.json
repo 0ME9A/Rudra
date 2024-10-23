@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "24x7 Rudra Creative Home Decor",
+    "short_name": "Rudra Creative",
+    "start_url": "https://rudracreativehomedecor.in",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#0F0F37",
+    "theme_color": "#FF5F06",
+    "description": "Transforming Spaces with Innovative Home Decor Solutions.",
+    "icons": [
+        {
+            "src": "./logo/logo-16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./logo/logo-32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo/logo-48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo/logo-72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo/logo-96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo/logo-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo/logo-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo/logo-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

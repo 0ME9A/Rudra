@@ -34,10 +34,10 @@ function Hero_04() {
     fetchTotalProjects();
   }, []);
 
-  if (loading)
+  if (!loading)
     return (
       <div className="h-full flex flex-col">
-        <div className="grid lg:grid-cols-2 items-start h-fit p-10 md:p-16 animate-pulse">
+        <div className="grid lg:grid-cols-2 gap-4 items-start h-fit p-10 md:p-16 animate-pulse">
           <div className="space-y-2 *:rounded-full *:p-2 *:bg-accent-500/20 *:w-[80%]">
             <div />
             <div className="!w-1/2" />
@@ -52,7 +52,7 @@ function Hero_04() {
 
   if (error)
     return (
-      <Error_v2 className="md:p-10" message="Failed to load resources." />
+      <Error_v2 className="p-4 md:p-10" message="Failed to load resources." />
     );
 
   return (
