@@ -11,7 +11,7 @@ export const twitter: Twitter = {
   siteId: "RudraCreative",
   creator: "@RudraCreative",
   creatorId: "RudraCreative",
-  images: ["/assets/images/home-decor-project.jpg"], // Use a relevant image
+  images: ["/assets/images/og-image.png"], // Use a relevant image
 };
 
 export const og: OpenGraph = {
