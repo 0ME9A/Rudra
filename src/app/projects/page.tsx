@@ -14,11 +14,9 @@ export default async function Page() {
   let projects: ProjectFace[] = [];
 
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects`,
-      {
-        cache: "no-store",
-      }
+    const res = await fetch(`/api/projects`, {
+      cache: "no-store",
+    }
     );
 
     if (!res.ok) throw new Error("Failed to fetch Projects.");

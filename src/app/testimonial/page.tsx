@@ -15,7 +15,7 @@ export default async function Page() {
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial`,
+      `/api/testimonial`,
       { cache: "no-store" }
     );
 

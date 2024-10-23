@@ -17,9 +17,7 @@ function Projects() {
     // Fetch the total number of projects
     const fetchTotalProjects = async () => {
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects/all`
-        );
+        const res = await fetch(`/api/projects/all`);
         if (!res.ok) throw new Error("Failed to fetch total projects.");
 
         const data = await res.json();
@@ -33,9 +31,7 @@ function Projects() {
     // Fetch the limited number of projects
     const fetchLimitedProjects = async () => {
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects?limit=4`
-        );
+        const res = await fetch(`/api/projects?limit=4`);
         if (!res.ok) throw new Error("Failed to fetch limited projects.");
 
         const data = await res.json();
