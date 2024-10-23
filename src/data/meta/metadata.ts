@@ -88,7 +88,7 @@ export const metadataDefault: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#08081B", // Pick a color that matches the project branding
-  colorScheme: "dark",
+  colorScheme: "light",
 };
 
 export const siteMap: sitemapFace[] = [
