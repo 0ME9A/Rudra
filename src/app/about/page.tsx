@@ -1,5 +1,23 @@
 import Image from "next/image";
+import { Metadata } from "next/types";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "About Us - 24x7 Rudra Creative Home Decor & Architects",
+  description:
+    "Learn about 24x7 Rudra Creative Home Decor & Architects, a top firm in the Patna region, specializing in innovative interior design and architectural solutions. Discover our expertise in home decor and architecture, delivering exceptional results across the region.",
+  keywords: [
+    "about us",
+    "24x7 Rudra Creative Home Decor & Architects",
+    "interior design Patna",
+    "architecture Patna",
+    "home decor Patna region",
+    "Patna design expertise",
+    "architectural solutions Patna",
+    "innovative design Patna",
+    "decor services Patna",
+  ],
+};
 
 function page() {
   return (
