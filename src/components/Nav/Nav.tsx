@@ -20,7 +20,7 @@ function Nav() {
 
   return (
     <>
-      <div className="w-full relative top-0 z-50 bg-navy-900">
+      <div className="w-full relative top-0 z-50">
         <nav className="container flex justify-between items-center mx-auto p-2 py-4 md:p-4 lg:py-6">
           <div>
             <h1 className="text-xl md:text-2xl font-bold">
