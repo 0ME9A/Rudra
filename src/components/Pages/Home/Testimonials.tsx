@@ -73,7 +73,7 @@ function Testimonials() {
             <h3 className="text-xl md:text-2xl uppercase font-[500]">
               {lt?.name}
             </h3>
-            <p className="text-gray-200">{lt?.profession}</p>
+            <p className="text-gray-500 dark:text-gray-200">{lt?.profession}</p>
           </div>
           <blockquote
             cite=""
