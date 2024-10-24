@@ -17,7 +17,7 @@ function Hero_04() {
     const fetchTotalProjects = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects/all`
+          `/api/projects/all`
         );
         if (!res.ok) throw new Error("Failed to fetch total projects.");
 
@@ -34,7 +34,7 @@ function Hero_04() {
     fetchTotalProjects();
   }, []);
 
-  if (!loading)
+  if (loading)
     return (
       <div className="h-full flex flex-col">
         <div className="grid lg:grid-cols-2 gap-4 items-start h-fit p-10 md:p-16 animate-pulse">
