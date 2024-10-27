@@ -1,9 +1,9 @@
 import { TestimonialFace } from "@/ts/interfaces";
+import React, { Suspense } from "react";
 import { Metadata } from "next/types";
 import Error_v1 from "@/components/Error_v1";
 import Loading from "@/components/Loading";
 import dynamic from "next/dynamic";
-import React, { Suspense } from "react";
 
 // Lazy load TestimonialCard component
 const TestimonialCard = dynamic(

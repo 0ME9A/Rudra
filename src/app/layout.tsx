@@ -4,10 +4,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import CallNow from "@/components/Fix/CallNow";
+import ChatNow from "@/components/Fix/ChatNow";
 import ClientLayout from "./clientLayout";
 import Nav from "@/components/Nav/Nav";
 import "./globals.css";
-import ChatNow from "@/components/Fix/ChatNow";
 
 const inter = Inter({
   subsets: ["latin"],

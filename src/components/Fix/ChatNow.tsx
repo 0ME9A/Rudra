@@ -1,5 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
+import Image from "next/image";
 
 function ChatNow() {
   return (
@@ -9,9 +10,16 @@ function ChatNow() {
         title="Chat on WhatsApp"
         className="flex items-center justify-center p-1 bg-accent-500 rounded-full shadow-lg"
       >
-        <span className="bg-white text-accent-500 text-2xl p-2 rounded-full relative shadow-xl animate-bounce">
-          <FaWhatsapp />
-        </span>
+        <Image
+          src={"/img/whatsapp.png"}
+          alt={"Whatsapp"}
+          width={"48"}
+          height={"48"}
+          quality={100}
+          blurDataURL="data:..."
+          placeholder="blur"
+          className="animate-bounce"
+        />
         <strong className="p-2 hidden md:block">Chat on WhatsApp</strong>
       </Link>
     </div>
