@@ -7,9 +7,12 @@ import Hero_04 from "./Hero_04";
 function Hero() {
   return (
     <section className="container p-4 pt-24 mx-auto grid md:grid-cols-2 min-h-screen">
-      <div className="flex flex-col justify-center gap-10 xl:gap-24 pt-32">
-        <h2 className="text-[3rem] sm:text-[4rem] xl:text-[5rem] leading-none font-[200]">
-          Innovative <br /> <b className="italic font-[600]"> Architecture </b>
+      <div className="flex flex-col justify-center gap-10 xl:gap-24 pt-4">
+        <h2 className="text-[3rem] sm:text-[4rem] leading-none font-[200]">
+          Innovative <br /> <b className="italic font-[600]"> Architecture, </b>
+          <b className="italic font-[600]"> Construction, </b><br />
+          <b className="italic font-[600]"> Interior, </b><br />
+          <b className="italic font-[600]"> Exterior </b><br />
           for Modern Space
         </h2>
         <div className="flex items-start flex-wrap gap-4 md:gap-6">
