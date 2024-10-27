@@ -1,5 +1,6 @@
 import { ProjectFace } from "@/ts/interfaces";
 import Image from "next/image";
+import Link from "next/link";
 
 interface cardFace {
   data: ProjectFace;
@@ -7,10 +8,10 @@ interface cardFace {
 }
 
 function ProjectCard({ data, className }: cardFace) {
-  const { title, previewImages, desc, date, address, status } = data;
+  const { _id, title, previewImages, desc, date, address, status } = data;
   const setDate = new Date(date);
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <Link href={`/projects/${_id}`} className={`relative overflow-hidden ${className}`}>
       <Image
         src={`data:image/jpeg;base64,${previewImages[0]}`}
         alt={title}
@@ -35,7 +36,7 @@ function ProjectCard({ data, className }: cardFace) {
         </div>
         <p className="pt-2">{desc}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

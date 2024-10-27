@@ -2,10 +2,10 @@
 import { ProjectFace } from "@/ts/interfaces";
 import { useState, useEffect } from "react";
 import ProjectCard from "@/components/Card/ProjectCard";
+import Error_v2 from "@/components/Error_v2";
 import Footer from "../../Projects/Footer";
 import Loading from "@/components/Loading";
 import Header from "../Projects/Header";
-import Error_v2 from "@/components/Error_v2";
 
 function Projects() {
   const [projectData, setProjectData] = useState<ProjectFace[]>([]);
