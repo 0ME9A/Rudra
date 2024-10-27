@@ -1,15 +1,18 @@
 import { GoPlus } from "react-icons/go";
 import PrimaryLink from "@/components/Links/PrimaryLink";
+import Hero_04 from "./Hero_04";
 import Image from "next/image";
 import Link from "next/link";
-import Hero_04 from "./Hero_04";
 
 function Hero() {
   return (
     <section className="container p-4 pt-24 mx-auto grid md:grid-cols-2 min-h-screen">
-      <div className="flex flex-col justify-center gap-10 xl:gap-24 pt-32">
-        <h2 className="text-[3rem] sm:text-[4rem] xl:text-[5rem] leading-none font-[200]">
-          Innovative <br /> <b className="italic font-[600]"> Architecture </b>
+      <div className="flex flex-col justify-center gap-10 xl:gap-24 pt-4">
+        <h2 className="text-[3rem] sm:text-[4rem] leading-none font-[200]">
+          Innovative <br /> <b className="italic font-[600]"> Architecture, </b>
+          <b className="italic font-[600]"> Construction, </b><br />
+          <b className="italic font-[600]"> Interior, </b><br />
+          <b className="italic font-[600]"> Exterior </b><br />
           for Modern Space
         </h2>
         <div className="flex items-start flex-wrap gap-4 md:gap-6">
@@ -94,7 +97,7 @@ function Hero() {
         <div className="w-full text-black grid items-center justify-center pt-16">
           <div>
             <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[2.5rem] leading-none font-[600]">
-              100<span className="text-accent-500">+</span>
+              1.5k<span className="text-accent-500">+</span>
             </p>
             <p className="text-sm leading-none font-[500] py-2">Clients</p>
           </div>

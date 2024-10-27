@@ -22,15 +22,15 @@ export interface ProjectFace {
 }
 
 export interface TestimonialFace {
-  _id: string;  // MongoDB ObjectId as a string
+  _id: string; // MongoDB ObjectId as a string
   name: string;
   profession: string;
   message: string;
   rate: number; // Represents rating as a number (4.8 in the example)
   date: string; // ISO date string
   profile: string; // URL to the profile image
+  email: string;
 }
-
 
 export interface CountryPhoneCode {
   name: string;
