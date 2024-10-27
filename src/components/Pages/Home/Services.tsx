@@ -48,9 +48,9 @@ const serviceData: ServiceDataProps[] = [
   },
 ];
 
-function Services() {
+function Services({ data }: { data: ServiceDataProps[] }) {
   return (
-    <div className="container mx-auto p-4">
+    <div className="">
       {serviceData.map((item) => (
         <ServiceCard
           key={item.id}

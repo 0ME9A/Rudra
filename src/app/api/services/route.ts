@@ -6,17 +6,27 @@ export async function GET() {
   try {
     // Connect to the MongoDB client
     const client = await clientPromise;
-    const db = client.db(db_name); // Replace with your database name
+    const db = client.db(db_name);
 
-    // Fetch projects collection
-    const projects = await db.collection("services").find({}).toArray();
+    // Fetch both services and more_services collections
+    const services = await db.collection("services").find({}).toArray();
+    const moreServices = await db
+      .collection("more_services")
+      .find({})
+      .toArray();
 
-    // Send the response
-    return NextResponse.json({ success: true, data: projects });
+    // Send the response with both collections
+    return NextResponse.json({
+      success: true,
+      data: {
+        services,
+        moreServices,
+      },
+    });
   } catch (error) {
     return NextResponse.json({
       success: false,
-      message: "Failed to fetch services",
+      message: "Failed to fetch services data",
     });
   }
 }

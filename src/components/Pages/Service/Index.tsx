@@ -1,5 +1,5 @@
 import { ServiceDataProps } from "@/ts/interfaces";
-import ServiceCard from "@/components/Card/ServiceCard";
+import AllServices from "../Home/AllServices";
 
 const serviceData: ServiceDataProps[] = [
   {
@@ -49,20 +49,7 @@ const serviceData: ServiceDataProps[] = [
 ];
 
 function Index() {
-  return (
-    <div>
-      {serviceData.map((item) => (
-        <ServiceCard
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          desc={item.desc}
-          url={item.url}
-          img={item.img}
-        />
-      ))}
-    </div>
-  );
+  return <AllServices />;
 }
 
 export default Index;

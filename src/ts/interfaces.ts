@@ -37,3 +37,11 @@ export interface CountryPhoneCode {
   dial_code: string;
   code: string;
 }
+
+export type Service_v2Face = {
+  _id: string;
+  title: string;
+  description: string;
+  category: string;
+  type: string[];
+};

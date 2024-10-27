@@ -1,4 +1,4 @@
-import { IoCallSharp } from "react-icons/io5";
+import Image from "next/image";
 import Link from "next/link";
 
 function CallNow() {
@@ -9,9 +9,16 @@ function CallNow() {
         title="Call Now"
         className="flex items-center justify-center p-1 bg-accent-500 rounded-full shadow-lg"
       >
-        <span className="bg-white text-accent-500 text-2xl p-2 rounded-full relative shadow-xl animate-bounce">
-          <IoCallSharp />
-        </span>
+        <Image
+          src={"/img/telephone.png"}
+          alt={"telephone"}
+          width={"48"}
+          height={"48"}
+          quality={100}
+          blurDataURL="data:..."
+          placeholder="blur"
+          className="animate-bounce"
+        />
         <strong className="p-2 hidden md:block">+91 7903021397</strong>
       </Link>
     </div>
