@@ -94,7 +94,7 @@ function Hero() {
         <div className="w-full text-black grid items-center justify-center pt-16">
           <div>
             <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[2.5rem] leading-none font-[600]">
-              100<span className="text-accent-500">+</span>
+              1.5k<span className="text-accent-500">+</span>
             </p>
             <p className="text-sm leading-none font-[500] py-2">Clients</p>
           </div>

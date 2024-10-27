@@ -23,7 +23,7 @@ function TestimonialCard({ data, className }: TestimonialCardProps) {
         }}
       >
         <Image
-          src={profile}
+          src={`data:image/jpeg;base64,${profile}`}
           alt={name + "avatar"}
           width={300}
           height={300}

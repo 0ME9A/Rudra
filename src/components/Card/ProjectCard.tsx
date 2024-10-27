@@ -12,7 +12,7 @@ function ProjectCard({ data, className }: cardFace) {
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <Image
-        src={previewImages[0] || ""}
+        src={`data:image/jpeg;base64,${previewImages[0]}`}
         alt={title}
         width={500}
         height={500}
@@ -23,7 +23,7 @@ function ProjectCard({ data, className }: cardFace) {
       />
       <span className="w-full h-full absolute top-0 bg-gradient-to-t from-navy-900/80 to-transparent" />
       <div className="h-16"></div>
-      <div className="absolute top-2 right-2 p-2 py-1 bg-navy-900/20 flex justify-center items-center gap-2 text-xs rounded-full text-white">        
+      <div className="absolute top-2 right-2 p-2 py-1 bg-navy-900/20 flex justify-center items-center gap-2 text-xs rounded-full text-white">
         <div className="size-2 bg-accent-500 rounded-full animate-pulse" />
         <p>{status}</p>
       </div>
