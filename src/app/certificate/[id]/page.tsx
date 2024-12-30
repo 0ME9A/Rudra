@@ -55,10 +55,11 @@ export default async function Page({ params }: { params: { id: string } }) {
     const certificate: CertificateFace = await certificateRes.json();
 
     return (
-      <div className="max-w-screen-lg mx-auto space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32 pb-6">
+      <div className="container p-4 lg:max-w-screen-lg mx-auto space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32">
         <Suspense fallback={<Loading />}>
           <CertificateCard data={certificate} />
         </Suspense>
+        <div />
       </div>
     );
   } catch (error) {
