@@ -19,8 +19,9 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div className="container mx-auto p-4 space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32 pb-32">
+    <div className="container mx-auto p-4 space-y-8 sm:space-y-16 md:space-y-24 lg:space-y-32">
       <GetCertificateForm />
+      <div />
     </div>
   );
 }

@@ -13,7 +13,7 @@ interface certFace {
 
 function CertificateCard({ data, className }: certFace) {
   const { _id, title, name, certSrc, desc, certId } = data;
-  const fullUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/certificate/${certId}`;
+  const fullUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/certificate/${certId}`;
 
   const handleCopyLink = async () => {
     try {
@@ -45,7 +45,7 @@ function CertificateCard({ data, className }: certFace) {
         placeholder="blur"
         className="w-full h-auto object-cover"
       />{" "}
-      <div className="flex items-start mt-6">
+      <div className="sm:flex items-start mt-6">
         <header className="space-y-2">
           <h2 className="text-3xl uppercase">{title}</h2>
           <p>
@@ -53,21 +53,24 @@ function CertificateCard({ data, className }: certFace) {
           </p>
           <figcaption>{desc}</figcaption>
         </header>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2 mt-6 sm:mt-0">
           <PrimaryBtn
             title="Copy link"
-            className="!p-3"
+            className="!p-3 flex gap-2 items-center justify-center w-full bg-transparent border-2 !border-accent-500"
             onClick={handleCopyLink}
           >
+            <span className="sm:hidden">Copy Certificate Url</span>
             <IoMdCopy />
           </PrimaryBtn>
           <PrimaryBtn
             title="Download certificate"
-            className="!p-3"
+            className="!p-3 flex gap-2 items-center justify-center w-full border !border-accent-500"
             onClick={() =>
               handleDownloadCertificate(`data:image/jpeg;base64,${certSrc}`)
             }
           >
+            <span className="sm:hidden">Download Certificate</span>
+
             <MdDownload />
           </PrimaryBtn>
         </div>
