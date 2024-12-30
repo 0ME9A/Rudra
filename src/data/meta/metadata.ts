@@ -148,8 +148,8 @@ export const siteMap: sitemapFace[] = [
     url: "/careers",
   },
   {
-    name: "certificates",
-    url: "/certificates",
+    name: "certificate",
+    url: "/certificate",
   },
   {
     name: "privacy_policy",

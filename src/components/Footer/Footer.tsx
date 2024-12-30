@@ -12,7 +12,7 @@ const company = [
   { id: "0", name: "about us", link: "/about" },
   { id: "1", name: "our teams", link: "/teams" },
   { id: "2", name: "careers", link: "/careers" },
-  { id: "3", name: "certificates", link: "/certificates" },
+  { id: "3", name: "certificate", link: "/certificate" },
   { id: "4", name: "privacy & policy", link: "/privacy_policy" },
   { id: "5", name: "terms of service", link: "/terms_of_service" },
 ];

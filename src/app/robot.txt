@@ -2,7 +2,7 @@
 
 User-agent: *
 Disallow: /api/
-Disallow: /certificates/
+Disallow: /certificate/
 Disallow: /careers/
 
 Allow: /

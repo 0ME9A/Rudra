@@ -21,6 +21,15 @@ export interface ProjectFace {
   previewImages: string[];
 }
 
+export interface CertificateFace {
+  _id: string;
+  title: string;
+  desc: string;
+  name: string;
+  certSrc: string;
+  certId: string;
+}
+
 export interface TestimonialFace {
   _id: string; // MongoDB ObjectId as a string
   name: string;
