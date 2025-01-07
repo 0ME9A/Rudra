@@ -1,6 +1,7 @@
-import { TestimonialFace } from "@/ts/interfaces";
+import { PaginationFace, TestimonialFace } from "@/ts/interfaces";
 import React, { Suspense } from "react";
 import { Metadata } from "next/types";
+import Pagination from "@/components/Pages/Projects/Pagination";
 import Error_v1 from "@/components/Error_v1";
 import Loading from "@/components/Loading";
 import dynamic from "next/dynamic";
@@ -10,6 +11,9 @@ const TestimonialCard = dynamic(
   () => import("@/components/Card/TestimonialCard"),
   { suspense: true }
 );
+
+type Params = Promise<{ slug: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export const metadata: Metadata = {
   title: "Testimonials - 24x7 Rudra Creative Home Decor & Architects",
@@ -28,16 +32,33 @@ export const metadata: Metadata = {
   ],
 };
 
-export default async function Page() {
+export default async function Page(props: {
+  params: Params;
+  searchParams: SearchParams;
+}) {
+  const searchParams = await props.searchParams;
+
   let testimonials: TestimonialFace[] = [];
+  let pagination: PaginationFace = {
+    totalProjects: 0,
+    totalPages: 0,
+    currentPage: 0,
+    limit: 0,
+  };
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial`, { cache: "no-store" });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial?page=${
+        searchParams?.page || 1
+      }`,
+      { cache: "no-store" }
+    );
 
     if (!res.ok) throw new Error("Failed to fetch testimonials.");
 
     const apiResponse = await res.json();
     testimonials = apiResponse.data;
+    pagination = apiResponse.pagination;
   } catch (error) {
     console.error("Error fetching testimonials:", error);
     return (
@@ -68,6 +89,12 @@ export default async function Page() {
           ))}
         </Suspense>
       </div>
+      {pagination.totalPages > 1 && (
+        <Pagination
+          totalPages={pagination.totalPages}
+          currentPage={pagination.currentPage}
+        />
+      )}
       <div />
     </section>
   );

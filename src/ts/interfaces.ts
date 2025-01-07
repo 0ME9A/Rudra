@@ -54,3 +54,10 @@ export type Service_v2Face = {
   category: string;
   type: string[];
 };
+
+export interface PaginationFace {
+  totalProjects: number;
+  totalPages: number;
+  currentPage: number;
+  limit: number;
+}
