@@ -1,4 +1,4 @@
-import { ProjectFace } from "@/ts/interfaces";
+import { PaginationFace, ProjectFace } from "@/ts/interfaces";
 import React, { Suspense } from "react";
 import { Metadata } from "next/types";
 import Pagination from "@/components/Pages/Projects/Pagination";
@@ -11,13 +11,6 @@ import dynamic from "next/dynamic";
 const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"), {
   suspense: true,
 });
-
-type PaginationFace = {
-  totalProjects: number;
-  totalPages: number;
-  currentPage: number;
-  limit: number;
-};
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -52,6 +45,7 @@ export default async function Page(props: {
     currentPage: 0,
     limit: 0,
   };
+
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects?page=${
@@ -89,10 +83,12 @@ export default async function Page(props: {
           ))}
         </Suspense>
       </section>
-      <Pagination
-        totalPages={pagination.totalPages}
-        currentPage={pagination.currentPage}
-      />
+      {pagination.totalPages > 1 && (
+        <Pagination
+          totalPages={pagination.totalPages}
+          currentPage={pagination.currentPage}
+        />
+      )}
       <div />
     </div>
   );
