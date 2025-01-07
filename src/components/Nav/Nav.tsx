@@ -1,5 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
+import { contact } from "@/data/contact";
 import { useState } from "react";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import PrimaryLink from "../Links/PrimaryLink";
@@ -102,7 +103,10 @@ function Nav() {
         <div className="h-full" />
         <div className="grid grid-cols-1 gap-2 p-4 text-center">
           <PrimaryLink href="/contact">Contact us</PrimaryLink>
-          <PrimaryLink href="tel:+919304982636" transparent={true}>
+          <PrimaryLink
+            href={`tel:+91${contact.primaryPhone}`}
+            transparent={true}
+          >
             Book a call
           </PrimaryLink>
         </div>

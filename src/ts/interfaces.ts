@@ -61,3 +61,29 @@ export interface PaginationFace {
   currentPage: number;
   limit: number;
 }
+
+export interface ContactFace {
+  mail: string;
+  primaryPhone: string;
+  secondaryPhone: string;
+  emergencyContact: string;
+  address: {
+    line1: string;
+    city: string;
+    state: string;
+    postalCode: string;
+    country: string;
+  };
+  socialMedia: {
+    facebook: string;
+    instagram: string;
+    linkedin: string;
+  };
+  meetingTime: {
+    start: string;
+    end: string;
+  };
+  meetingDays: string[];
+  website: string;
+  getFormattedMeetingTime: () => string;
+}

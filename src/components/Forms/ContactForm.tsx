@@ -2,6 +2,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { CountryPhoneCode } from "@/ts/interfaces";
 import { MdDateRange } from "react-icons/md";
+import { contact } from "@/data/contact";
 import countryCodes from "../../data/countryCodes.json";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import Link from "next/link";
@@ -159,7 +160,7 @@ function ContactForm() {
                 <MdDateRange />
                 Start Meting
               </p>
-              <p className="text-2xl font-[500]">9:00 AM</p>
+              <p className="text-2xl font-[500]">{contact.meetingTime.start}</p>
             </div>
             <span className="h-10 border rounded-full border-white"></span>
             <div>
@@ -167,18 +168,14 @@ function ContactForm() {
                 <MdDateRange />
                 End Meting
               </p>
-              <p className="text-2xl font-[500]">10:00 AM</p>
+              <p className="text-2xl font-[500]">{contact.meetingTime.end}</p>
             </div>
           </div>
           <div className="pt-6">
             <div className="flex items-center justify-between pb-2 text-xs text-center">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
-              <span>6</span>
-              <span>7</span>
+              {Array.from({ length: 7 }, (_, i) => (
+                <span key={i}>{i + 1}</span>
+              ))}
             </div>
             <div className="w-full h-16 flex justify-between items-center">
               <span className="h-full w-[1px] bg-white"></span>
@@ -196,11 +193,9 @@ function ContactForm() {
               <span className="h-full w-[1px] bg-white"></span>
             </div>
             <div className="flex items-center justify-between pt-2 text-xs text-center">
-              <span>Mon</span>
-              <span>Tue</span>
-              <span>Wed</span>
-              <span>Thu</span>
-              <span>Fri</span>
+              {contact.meetingDays.map((item) => (
+                <span key={item}>{item.slice(0, 3)}</span>
+              ))}
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
-import React from "react";
+import { contact } from "@/data/contact";
 import PrimaryLink from "../Links/PrimaryLink";
+import React from "react";
 
 function Footer() {
   return (
@@ -9,7 +10,7 @@ function Footer() {
           Contact us
         </PrimaryLink>
         <PrimaryLink
-          href="tel:+919304982636"
+          href={`tel:+91${contact.primaryPhone}`}
           className="w-full sm:w-fit !normal-case"
           transparent={true}
         >
