@@ -1,3 +1,4 @@
+import { contact } from "@/data/contact";
 import { GoPlus } from "react-icons/go";
 import PrimaryLink from "@/components/Links/PrimaryLink";
 import Hero_04 from "./Hero_04";
@@ -10,9 +11,12 @@ function Hero() {
       <div className="flex flex-col justify-center gap-10 xl:gap-24 pt-4">
         <h2 className="text-[3rem] sm:text-[4rem] leading-none font-[200]">
           Innovative <br /> <b className="italic font-[600]"> Architecture, </b>
-          <b className="italic font-[600]"> Construction, </b><br />
-          <b className="italic font-[600]"> Interior, </b><br />
-          <b className="italic font-[600]"> Exterior </b><br />
+          <b className="italic font-[600]"> Construction, </b>
+          <br />
+          <b className="italic font-[600]"> Interior, </b>
+          <br />
+          <b className="italic font-[600]"> Exterior </b>
+          <br />
           for Modern Space
         </h2>
         <div className="flex items-start flex-wrap gap-4 md:gap-6">
@@ -24,7 +28,7 @@ function Hero() {
               Contact us
             </PrimaryLink>
             <PrimaryLink
-              href="tel:+917903021397"
+              href={`tel:+91${contact.primaryPhone}`}
               className="w-full sm:w-fit !normal-case"
               transparent={true}
             >

@@ -1,6 +1,7 @@
-import { ProjectFace } from "@/ts/interfaces";
-import React, { Suspense } from "react";
 import { Metadata, ResolvingMetadata } from "next/types";
+import { ProjectFace } from "@/ts/interfaces";
+import { contact } from "@/data/contact";
+import React, { Suspense } from "react";
 import ProjectById from "@/components/Pages/Projects/ProjectById";
 import PrimaryLink from "@/components/Links/PrimaryLink";
 import ProjectCard from "@/components/Card/ProjectCard";
@@ -86,7 +87,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                   Contact us
                 </PrimaryLink>
                 <PrimaryLink
-                  href="tel:+919304982636"
+                  href={`tel:+91${contact.primaryPhone}`}
                   className="w-full sm:w-fit !normal-case"
                   transparent={true}
                 >

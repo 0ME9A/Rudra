@@ -2,6 +2,7 @@ import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
 import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
 import { sitemapFace } from "@/ts/metaface";
 import { Metadata, Viewport } from "next";
+import { contact } from "../contact";
 
 export const twitter: Twitter = {
   card: "summary_large_image",
@@ -35,7 +36,7 @@ export const og: OpenGraph = {
 };
 
 export const metadataDefault: Metadata = {
-  metadataBase: new URL("https://rudracreativehomedecor.in"),
+  metadataBase: new URL(contact.website),
   generator: "Next.js",
   title: {
     template: "%s | 24x7 Rudra Home Decor",
