@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubscribeForm from "../Forms/SubscribeForm";
 import Link from "next/link";
 
@@ -18,17 +19,30 @@ const company = [
 ];
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="w-full bg-accent-500 clip-path-penta-tl-lg lg:clip-path-penta-tl-2xl overflow-hidden">
-      <div className="container mx-auto grid md:grid-cols-2 p-4 py-32 gap-10">
-        <div className="w-full space-y-10">
-          <div className="p-2 bg-white w-fit text-accent-500 text-3xl rounded-lg font-[500]">
-            <p>RD</p>
-          </div>
-          <p className="text-lg max-w-sm">
+      <div className="container mx-auto grid md:grid-cols-2 p-4 py-16 md:py-32 gap-10">
+        <div className="w-full space-y-3 max-w-lg">
+          <Image
+            src={"/logo/logo-32.png"}
+            alt="brand"
+            width={50}
+            height={50}
+            quality={100}
+            blurDataURL="data:..."
+            placeholder="blur"
+            className="rounded-full border-2"
+          />
+          <p className="text-lg">
             “Architecture is a visual art and the buildings speak for
             themselves.”
           </p>
+          <address>
+            <b>Address:</b> 70 feet Saristabad, near the celebration point,
+            opposite to Bajaj auto showroom, Patna, Bihar 800002
+          </address>
           <SubscribeForm />
         </div>
         <div className="w-full grid grid-cols-2 gap-4">
@@ -58,6 +72,10 @@ function Footer() {
           </ul>
         </div>
       </div>
+      <p className="text-sm text-center p-1">
+        &copy; {currentYear} 24x7 Rudra Creative Home Decor & Architects. All
+        rights reserved.
+      </p>
     </div>
   );
 }

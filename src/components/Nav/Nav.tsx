@@ -5,6 +5,7 @@ import { useState } from "react";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import PrimaryLink from "../Links/PrimaryLink";
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   // { id: "0", name: "home", link: "/" },
@@ -22,24 +23,36 @@ function Nav() {
   return (
     <>
       <div className="w-full relative top-0 z-50">
-        <nav className="container flex justify-between items-center mx-auto p-2 py-4 md:p-4 lg:py-6">
-          <div>
-            <h1 className="text-xl md:text-2xl font-bold">
-              <Link href="/" className="text-accent-500">
-                24x7 RUDRA
-              </Link>
-            </h1>
-            <span className={"text-[.8rem]"}>
-              Creative Home Decor & Architects
-            </span>
+        <nav className="container grid grid-cols-8 items-center mx-auto p-2 py-4 md:p-4 lg:py-6">
+          <div className="flex gap-4 items-center col-span-6 md:col-span-2">
+            <Image
+              src={"/logo/logo-32.png"}
+              alt="brand"
+              width={40}
+              height={40}
+              quality={100}
+              blurDataURL="data:..."
+              placeholder="blur"
+              className="rounded-full border-2"
+            />
+            <div className="leading-3">
+              <h1 className="text-lg lg:text-xl font-bold">
+                <Link href="/" className="text-accent-500">
+                  24x7 RUDRA
+                </Link>
+              </h1>
+              <span className={"text-[.8rem] font-light"}>
+                Creative Home Decor & Architects
+              </span>
+            </div>
           </div>
-          <ul className="hidden md:flex items-center md:w-1/2 lg:w-1/3 justify-between capitalize font-[300]">
+          <ul className="hidden md:flex items-center gap-3 col-span-4 lg:gap-5 xl:gap-8 justify-center capitalize font-[300]">
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.link}
                   title={item.name}
-                  className={`${
+                  className={`text-sm lg:text-base ${
                     `/${path.split("/")[1]}` === item.link
                       ? "text-accent-500"
                       : ""
@@ -50,26 +63,30 @@ function Nav() {
               </li>
             ))}
           </ul>
-          <PrimaryBtn
-            onClick={() => router.push("/contact")}
-            className="hidden md:block"
-          >
-            Contact Us
-          </PrimaryBtn>
-          <button
-            type="button"
-            title={!menuState ? "Open menu" : "Close menu"}
-            className="text-accent-500 text-3xl space-y-2 md:hidden"
-            onClick={() => setMenuState(!menuState)}
-            aria-expanded={!menuState}
-          >
-            <span className="w-6 border block border-accent-500"></span>
-            <span
-              className={`w-6 border block ${
-                menuState ? "" : "border-accent-500"
-              }`}
-            ></span>
-          </button>
+          <div className="col-span-2 hidden justify-end md:flex ">
+            <PrimaryBtn
+              onClick={() => router.push("/contact")}
+              className="!py-2 !px-3"
+            >
+              Contact Us
+            </PrimaryBtn>
+          </div>
+          <div className="p-1 col-span-2 flex justify-end">
+            <button
+              type="button"
+              title={!menuState ? "Open menu" : "Close menu"}
+              className="text-accent-500 text-3xl space-y-2 md:hidden col-span-2"
+              onClick={() => setMenuState(!menuState)}
+              aria-expanded={!menuState}
+            >
+              <span className="w-6 border block border-accent-500"></span>
+              <span
+                className={`w-6 border block ${
+                  menuState ? "" : "border-accent-500"
+                }`}
+              ></span>
+            </button>
+          </div>
         </nav>
       </div>
       <div
