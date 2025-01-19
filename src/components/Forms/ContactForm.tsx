@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { CountryPhoneCode } from "@/ts/interfaces";
 import { MdDateRange } from "react-icons/md";
 import { contact } from "@/data/contact";
@@ -23,6 +23,7 @@ function ContactForm() {
   const [CPC, setCPC] = useState(
     countryPhoneCodes.find((item) => item.dial_code === "+91")
   );
+  const [coords, setCoords] = useState<GeolocationCoordinates | null>(null);
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -44,31 +45,54 @@ function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          phone: CPC?.dial_code + " " + formData.phone,
-        }),
-      });
+    const browserInfo = {
+      appName: navigator.appName,
+      appVersion: navigator.appVersion,
+      userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      language: navigator.language,
+    };
 
-      const data = await res.json();
-      if (res.ok) {
-        setResponseMessage(data.success);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          phone: "",
-          message: "",
+    try {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setCoords(position.coords);
         });
-      } else {
-        setResponseMessage(data.error || "Failed to send message.");
       }
-    } catch (error) {
+
+      if (!coords) alert("Allow Location Access");
+
+      if (coords) {
+        // Proceed with sending form data
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            phone: CPC?.dial_code + " " + formData.phone,
+            browserInfo,
+            coords,
+          }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          setResponseMessage(data.success);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            phone: "",
+            message: "",
+          });
+        } else {
+          setResponseMessage(data.error || "Failed to send message.");
+        }
+      }
+    } catch (error: any) {
+      console.error(error);
       setResponseMessage("Something went wrong.");
     } finally {
       setLoading(false);
@@ -77,6 +101,15 @@ function ContactForm() {
       setTimeout(() => setResponseMessage(""), 3000);
     }
   };
+
+  useEffect(() => {
+    // Fetch user's location when the component mounts
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setCoords(position.coords);
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -203,7 +236,7 @@ function ContactForm() {
         <PrimaryBtn
           type="submit"
           disabled={loading}
-          className="w-full bg-navy-900 hover:bg-navy-800 border-navy-800 focus:ring-navy-300"
+          className="w-full bg-navy-900 hover:bg-navy-800 border-navy-800 focus:ring-navy-300 disabled:cursor-not-allowed"
         >
           {loading ? "Sending..." : "Send"}
         </PrimaryBtn>
