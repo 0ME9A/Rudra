@@ -4,6 +4,12 @@ import { sitemapFace } from "@/ts/metaface";
 import { Metadata, Viewport } from "next";
 import { contact } from "../contact";
 
+// Option 1: Extend the existing Verification interface
+interface Verification {
+  // Existing properties
+  bing?: string; // Add the new property with optional typing
+}
+
 export const twitter: Twitter = {
   card: "summary_large_image",
   title: "24x7 Rudra Creative Home Decor & Architects",
@@ -110,6 +116,9 @@ export const metadataDefault: Metadata = {
   openGraph: og,
   verification: {
     google: "yuNzFVWe_kNOBiOjV9YZ7T07s0KpcpGJCX1Sr91v8po",
+    other: {
+      bing: "CE25712044382BA6B25081AD5E4B9A1F",
+    },
   },
 };
 
