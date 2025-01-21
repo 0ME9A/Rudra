@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://rudracreativehomedecor.in/gallery',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
       url: 'https://rudracreativehomedecor.in/testimonial',
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
