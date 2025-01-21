@@ -1,6 +1,6 @@
 {
   "name": "rudracreativehomedecor",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "private": true,
   "homepage": "https://rudracreativehomedecor.in/",
   "scripts": {
@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^15.1.5",
     "mongodb": "^6.9.0",
     "mongoose": "^8.7.1",
     "next": "14.2.5",

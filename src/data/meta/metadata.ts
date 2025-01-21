@@ -108,6 +108,9 @@ export const metadataDefault: Metadata = {
   twitter,
   manifest: "/manifest.json",
   openGraph: og,
+  verification: {
+    google: "yuNzFVWe_kNOBiOjV9YZ7T07s0KpcpGJCX1Sr91v8po",
+  },
 };
 
 export const viewport: Viewport = {
