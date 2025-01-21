@@ -21,6 +21,14 @@ export interface ProjectFace {
   previewImages: string[];
 }
 
+export interface GalleryFace {
+  _id: string;
+  title: string;
+  desc: string;
+  projectType: string;
+  previewImages: string[];
+}
+
 export interface CertificateFace {
   _id: string;
   title: string;
