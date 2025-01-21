@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Error_v2 from "@/components/Error_v2";
 
 interface GallerySliderProps {
   images: string[]; // Array of image URLs
@@ -8,6 +9,9 @@ interface GallerySliderProps {
 
 const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (typeof images !== "object")
+    return <Error_v2 message="Preview images not found!" />;
 
   // Function to handle moving to the next slide
   const nextSlide = () => {
@@ -44,7 +48,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
               quality={100}
               blurDataURL="data:..."
               placeholder="blur"
-              className="h-full object-cover mx-auto"
+              className="h-full mx-auto"
             />
           </div>
         ))}
