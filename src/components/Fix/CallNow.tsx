@@ -11,7 +11,7 @@ function CallNow() {
         className="flex items-center justify-center p-1 bg-accent-500 rounded-full shadow-lg"
       >
         <Image
-          src={"/img/telephone.png"}
+          src={"/img/telephone.webp"}
           alt={"telephone"}
           width={"48"}
           height={"48"}

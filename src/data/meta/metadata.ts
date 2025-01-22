@@ -18,7 +18,7 @@ export const twitter: Twitter = {
   siteId: "RudraCreative",
   creator: "@RudraCreative",
   creatorId: "RudraCreative",
-  images: ["/assets/images/og-image.png"], // Use a relevant image
+  images: ["/assets/images/og-image.webp"], // Use a relevant image
 };
 
 export const og: OpenGraph = {
@@ -32,8 +32,8 @@ export const og: OpenGraph = {
   type: "website",
   images: [
     {
-      url: "/assets/images/og-image.png", // Update image path accordingly
-      secureUrl: "/assets/images/og-image.png",
+      url: "/assets/images/og-image.webp", // Update image path accordingly
+      secureUrl: "/assets/images/og-image.webp",
       width: 1200,
       height: 630,
       alt: "24x7 Rudra Creative Home Decor",

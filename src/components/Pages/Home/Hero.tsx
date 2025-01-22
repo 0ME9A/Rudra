@@ -49,7 +49,7 @@ function Hero() {
         <div className="absolute bottom-[30%] left-0 z-10">
           <div className="flex -space-x-3 *:rounded-full *:size-10 *:shadow-lg">
             <Image
-              src={"/img/team/team_1.jpg"}
+              src={"/img/team/team_1.webp"}
               alt=""
               width={500}
               height={500}
@@ -58,7 +58,7 @@ function Hero() {
               className="h-full w-full"
             />
             <Image
-              src={"/img/team/team_2.jpg"}
+              src={"/img/team/team_2.webp"}
               alt=""
               width={500}
               height={500}
@@ -67,7 +67,7 @@ function Hero() {
               className="h-full w-full"
             />
             <Image
-              src={"/img/team/team_3.jpg"}
+              src={"/img/team/team_3.webp"}
               alt=""
               width={500}
               height={500}
@@ -88,7 +88,7 @@ function Hero() {
           </p>
         </div>
         <Image
-          src={"/img/prev_2.png"}
+          src={"/img/prev_2.webp"}
           alt=""
           width={500}
           height={500}
@@ -116,7 +116,7 @@ function Hero() {
         </div>
         <div className="h-full w-full bg-accent-500 clip-path-penta-tl-md lg:clip-path-penta-tl-xl">
           <Image
-            src={"/img/prev_1.png"}
+            src={"/img/prev_1.webp"}
             alt=""
             width={500}
             height={500}

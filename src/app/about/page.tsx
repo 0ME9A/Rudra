@@ -34,7 +34,7 @@ function page() {
       <div className="space-y-16">
         <div className="grid md:grid-cols-3 md:gap-4">
           <Image
-            src={"/img/team/team_1.jpg"}
+            src={"/img/team/team_1.webp"}
             alt={"The company owner"}
             width={"500"}
             height={"500"}
@@ -119,7 +119,7 @@ function page() {
         </div>
         {/* <div className="grid md:grid-cols-3 md:gap-4">
           <Image
-            src={"/img/team/team_2.jpg"}
+            src={"/img/team/team_2.webp"}
             alt={"The company owner"}
             width={"500"}
             height={"500"}
@@ -148,7 +148,7 @@ function page() {
         </div>
         <div className="grid md:grid-cols-3 md:gap-4">
           <Image
-            src={"/img/team/team_3.jpg"}
+            src={"/img/team/team_3.webp"}
             alt={"The company owner"}
             width={"500"}
             height={"500"}
