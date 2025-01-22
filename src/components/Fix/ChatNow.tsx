@@ -11,7 +11,7 @@ function ChatNow() {
         className="flex items-center justify-center p-1 bg-accent-500 rounded-full shadow-lg"
       >
         <Image
-          src={"/img/whatsapp.png"}
+          src={"/img/whatsapp.webp"}
           alt={"Whatsapp"}
           width={"48"}
           height={"48"}

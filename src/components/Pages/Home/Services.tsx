@@ -8,7 +8,7 @@ const serviceData: ServiceDataProps[] = [
     desc: "The first step involves meeting with the client to discuss their vision, needs, and budget. This consultation sets the foundation for the entire project.",
     url: "/service/initial_consultation",
     img: {
-      src: "/service/initialconsultation.jpg",
+      src: "/service/initialconsultation.webp",
       alt: "urban villa",
       size: { w: 500, h: 500 },
     },
@@ -19,7 +19,7 @@ const serviceData: ServiceDataProps[] = [
     desc: "Based on the initial consultation, we create conceptual designs that reflect the client’s vision. This phase includes sketches, mood boards, and preliminary layouts.",
     url: "/service/concept_design",
     img: {
-      src: "/service/conceptdesign.jpg",
+      src: "/service/conceptdesign.webp",
       alt: "urban villa",
       size: { w: 500, h: 500 },
     },
@@ -30,7 +30,7 @@ const serviceData: ServiceDataProps[] = [
     desc: "In the development phase, detailed designs are created, materials are selected, and any technical aspects are addressed. This is where the project takes shape.",
     url: "/service/development",
     img: {
-      src: "/service/development.jpg",
+      src: "/service/development.webp",
       alt: "urban villa",
       size: { w: 500, h: 500 },
     },
@@ -41,7 +41,7 @@ const serviceData: ServiceDataProps[] = [
     desc: "The final phase involves the execution of the design plan, ensuring everything is built and finished to the highest standards. We finalize the project and hand over the keys.",
     url: "/service/completion",
     img: {
-      src: "/service/completion.jpg",
+      src: "/service/completion.webp",
       alt: "urban villa",
       size: { w: 500, h: 500 },
     },
