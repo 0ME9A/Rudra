@@ -16,9 +16,7 @@ function Hero_04() {
     // Fetch the total number of projects
     const fetchTotalProjects = async () => {
       try {
-        const res = await fetch(
-          `/api/projects/all`
-        );
+        const res = await fetch(`/api/projects/all`);
         if (!res.ok) throw new Error("Failed to fetch total projects.");
 
         const data = await res.json();
@@ -57,23 +55,23 @@ function Hero_04() {
 
   return (
     <div className="h-full flex flex-col">
-      <div className="grid lg:grid-cols-2 items-start h-fit p-10 md:p-16">
+      <div className="grid lg:grid-cols-2 gap-4 lg:gap-2 items-start h-fit p-2 py-10 lg:p-10 md:p-16">
         <div className="flex items-center gap-4">
           <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[3rem] leading-none font-[600]">
             {totalProjects}
             <span className="text-accent-500">+</span>
           </p>
           <p className="text-gray-500 text-xl leading-none">
-            Successful <br /> project
+            Successful <br className="hidden md:block" /> project
           </p>
         </div>
         <div className="flex items-center gap-4">
           <p className="capitalize text-[1rem] sm:text-[2rem] xl:text-[3rem] leading-none font-[600]">
-            {yearsOfExpertise}
+            {yearsOfExpertise < 10 ? "0" + yearsOfExpertise : yearsOfExpertise}
             <span className="text-accent-500">+</span>
           </p>
           <p className="text-gray-500 text-xl leading-none">
-            Years of <br /> Expertise
+            Years of <br className="hidden md:block" /> Expertise
           </p>
         </div>
       </div>

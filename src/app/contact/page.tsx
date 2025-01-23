@@ -46,6 +46,7 @@ function contact() {
             height={1000}
             alt=""
             quality={100}
+            loading="lazy"
             blurDataURL="data:..."
             placeholder="blur"
             className="w-full h-full bg-accent-500 object-cover absolute"

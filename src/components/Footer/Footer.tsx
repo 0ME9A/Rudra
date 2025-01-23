@@ -31,6 +31,7 @@ function Footer() {
             width={50}
             height={50}
             quality={100}
+            loading="lazy"
             blurDataURL="data:..."
             placeholder="blur"
             className="rounded-full border-2"

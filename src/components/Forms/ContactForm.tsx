@@ -145,6 +145,7 @@ function ContactForm() {
             id="phoneCode"
             value={CPC?.dial_code}
             className="rounded-lg p-3 pr-0 focus:outline-none"
+            aria-label="phoneCode"
             onChange={(e) =>
               setCPC(
                 countryPhoneCodes.find(

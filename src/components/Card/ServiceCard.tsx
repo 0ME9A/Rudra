@@ -48,6 +48,7 @@ function ServiceCard({
           width={w}
           height={h}
           quality={100}
+          loading="lazy"
           priority={false}
           blurDataURL="data:..."
           placeholder="blur"

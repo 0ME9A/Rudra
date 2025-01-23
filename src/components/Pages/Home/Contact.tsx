@@ -30,6 +30,7 @@ function Contact() {
           blurDataURL="data:..."
           placeholder="blur"
           className="w-full h-full bg-accent-500 object-cover absolute"
+          loading="lazy"
           style={{
             clipPath:
               "polygon(0 5rem, 70% 5rem, calc(70% + 5rem) 0, 100% 0%, 100% calc(100% - 5rem), calc(100% - 5rem) 100%, 0 100%)",

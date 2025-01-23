@@ -39,6 +39,7 @@ function page() {
             width={"500"}
             height={"500"}
             quality={100}
+            loading="lazy"
             blurDataURL="data:..."
             placeholder="blur"
             className="w-full object-cover aspect-square clip-path-penta-tl-sm md:clip-path-penta-tl-md"
