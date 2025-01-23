@@ -24,10 +24,11 @@ function TestimonialCard({ data, className }: TestimonialCardProps) {
       >
         <Image
           src={`data:image/jpeg;base64,${profile}`}
-          alt={name + "avatar"}
+          alt={name + " avatar"}
           width={300}
           height={300}
           quality={100}
+          loading="lazy"
           blurDataURL="data:..."
           placeholder="blur"
           className="w-16 sm:w-24 md:w-32 lg:w-40 aspect-square object-cover rounded-full"

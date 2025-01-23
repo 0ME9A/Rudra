@@ -29,6 +29,7 @@ function Index() {
           quality={100}
           blurDataURL="data:..."
           placeholder="blur"
+          loading="lazy"
           className="w-full h-full bg-accent-500 object-cover absolute"
           style={{
             clipPath:

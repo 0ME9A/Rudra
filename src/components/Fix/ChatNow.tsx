@@ -16,6 +16,7 @@ function ChatNow() {
           width={"48"}
           height={"48"}
           quality={100}
+          loading="lazy"
           blurDataURL="data:..."
           placeholder="blur"
           className="animate-bounce"
