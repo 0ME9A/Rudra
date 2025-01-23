@@ -12,7 +12,7 @@
   "dependencies": {
     "@next/third-parties": "^15.1.5",
     "mongodb": "^6.9.0",
-    "mongoose": "^8.7.1",
+    "mongoose": "^8.9.5",
     "next": "14.2.5",
     "nodemailer": "^6.9.15",
     "react": "^18",
